@@ -5,6 +5,7 @@
 plugins {
     id 'java'
     id 'maven'
+	id "org.sonarqube" version "2.6"
 }
 
 repositories {
@@ -22,7 +23,10 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web:1.5.10.RELEASE'
     testCompile 'org.springframework.boot:spring-boot-starter-test:1.5.10.RELEASE'
     testCompile 'org.springframework.batch:spring-batch-test:3.0.8.RELEASE'
+	classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6.2"
 }
+
+apply plugin: "org.sonarqube"
 
 group = 'com.javainuse'
 version = '0.0.1'
